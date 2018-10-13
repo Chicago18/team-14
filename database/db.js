@@ -1,6 +1,7 @@
-const mysql = require('mysql'),
-      nconf = require('nconf');
+const mysql = require('mysql');
+      //nconf = require('nconf');
 
+      /*
 nconf.file({
   file: './config/config.json'
   });
@@ -58,3 +59,4 @@ exports.getLastClientIntake1 = () => {
 exports.getLastClientIntake2 = () => {
     return executeQuery('SELECT * FROM ClientIntake2 ORDER BY ID DESC LIMIT 1', []);
 }
+*/
