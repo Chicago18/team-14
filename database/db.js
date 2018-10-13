@@ -50,3 +50,11 @@ exports.addClientIntake2 = (body) => {
         body.pension, body.TANF, body.earnfare, body.socialSecurity, body.unemploymentInsurance, body.otherSource,
         body.SSI, body.referral, body.CHAClientId]);
 }
+
+exports.getLastClientIntake1 = () => {
+    return executeQuery('SELECT * FROM ClientIntake1 ORDER BY ID DESC LIMIT 1', []);
+}
+
+exports.getLastClientIntake2 = () => {
+    return executeQuery('SELECT * FROM ClientIntake2 ORDER BY ID DESC LIMIT 1', []);
+}

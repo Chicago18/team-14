@@ -39,5 +39,17 @@ function addToClientIntake2(req) {
     });
 }
 
+function getLastClientIntake1(req) {
+    db.getLastClientIntake1().then(function(data) {
+        //res.send(data);
+        console.log(data);
+    }).catch(function(error) {
+        console.log(error);
+        //res.sendStatus(500);
+    });
+}
+
 addToClientIntake1(obj1);
 addToClientIntake2(obj2);
+
+getLastClientIntake1();
