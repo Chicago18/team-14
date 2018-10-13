@@ -1,0 +1,3 @@
+*.odg
+/node_modules
+package.json
