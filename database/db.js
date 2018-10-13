@@ -31,7 +31,7 @@ executeQuery = (query, params) => {
 }
 
 exports.addClientIntake = (body) => {
-    return executeQuery('INSERT INTO ClientIntake (ProjectName, AgencyName, LastName, FirstName, MiddleInitial, \
+    return executeQuery('INSERT INTO ClientIntake1 (ProjectName, AgencyName, LastName, FirstName, MiddleInitial, \
         StreetNum, StreetDirection, StreetName, AptNo, AreaCode, PhoneNumber, ZipCode, isHomelessYouth, \
         Age, Birthdate, Grade, School, isDisabledText, Gender, isHispanic, TypeOfProgram, isDisabled, Race, \
         CommunityArea, Ward) Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
