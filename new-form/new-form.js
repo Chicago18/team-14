@@ -7,7 +7,7 @@
         for (const pair of formData) {
             data.append(pair[0], pair[1]);
         }
-        fetch("/new-item", {
+        fetch('/addClientIntake1', {
             method: "POST",
             body: data,
             headers: headers
