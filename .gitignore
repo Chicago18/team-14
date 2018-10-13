@@ -5,4 +5,4 @@ package.json
 test123.pdf
 package-lock.json
 config.json
-
+.DS_Store
