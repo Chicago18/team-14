@@ -1,0 +1,115 @@
+
+#preview{
+  width: 320px;
+  height: 260px;
+  padding:10px;
+  background-origin: content-box;
+  cursor: pointer
+}
+
+.new-img-div{
+  width: 50%;
+  margin: 0 auto;
+}
+
+#imageFile
+{
+  visibility: hidden;
+  margin-left: 10px;
+}
+
+.rem-icon{
+  margin: 10px;
+  color: #ff4444;
+  cursor: pointer;
+}
+
+#header {
+  margin-left: 30px;
+  color: #800000;
+  font-size: 40px;
+  font-weight: 200;
+  font-family: helvetica;
+}
+
+#buffer {
+  margin-top: 40px;
+}
+
+#background {
+  background-image: url("/assets/bkg.jpg");
+  height: auto;
+}
+
+#links {
+  height: 60px;
+  width: 350px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 20px;
+  color: #800000;
+  font-family: helvetica;
+  border-bottom: 1px solid black;
+}
+
+#tasks {
+  padding-top: 20px;
+  font-size: 15px;
+  font-family: helvetica;
+  text-align: left;
+  padding-left: 40px;
+}
+
+#border {
+  background-color: #800000;
+  height: 10px;
+}
+
+#borderinfo {
+  height: 150px;
+  padding-top: 10px;
+}
+
+#chart {
+    font-size: 20px;
+    float:right;
+}
+
+#classes {
+  padding-top: 20px;
+  font-size: 50px;
+  font-weight: 300;
+  color: #800000;
+  text-align: left;
+}
+
+#left {
+  display:inline-block;
+  padding-left: 70px;
+}
+
+#clear {
+  clear: both;
+}
+
+#header2 {
+  border-left: 1px solid black;
+  height: 810px;
+  position: absolute;
+  left: 22%;
+  margin-left: -3px;
+  top: 260px;
+}
+
+#info {
+   padding-left: 50px;
+   font-size: 15px;
+   text-align: left;
+}
+
+#school {
+   color: #800000;
+   font-size: 30px;
+   padding-left: 70px;
+   font-family: Helvetica;
+}

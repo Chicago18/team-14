@@ -1,8 +1,15 @@
 
-let bodyParser = require('body-parser'),
+let  express = require('express'),
+    bodyParser = require('body-parser'),
     db         = require('./database/db.js'),
     formFiller = require('./Forms/formFiller.js');
 
+const app = express();
+
+
+app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.json());
+app.use(express.static(__dirname));
 
     /*
    [body.familyType, body.housingStatus, body.foodStamps, body.freeLunch, body.healthInsurance, body.employment, 
@@ -20,7 +27,7 @@ let obj1 = {projectName : 'projectTest', agencyName : 'agencyTest', lastName : '
 let obj2 = {familyType : 2, housingStatus : 3, foodStamps: 0, freeLunch : 1, healthInsurance : 1, employment : 1, pension : 1, TANF : 0, earnfare : 0, 
             socialSecurity : 1, unemploymentInsurance : 1, otherSource : 1, SSI : 1, referral : 'referralTest', CHAClientId : 'CHAClientIdTest'};
 
-
+/*
 let obj3 = {
     ProjectName: 'projectTest',
     AgencyName: 'agencyTest',
@@ -68,16 +75,18 @@ let obj4 = {
     Referral: 'referralTest',
     CHAClientId: 'CHAClientIdTest'
 }
-function addToClientIntake1(req) {
-    db.addClientIntake1(req).then(function(data) {
-        //res.sendStatus(200);
-        return;
+*///app.post('/new-item', (req, res) => {
+
+app.post('/addClientIntake1', (req, res) => {
+    db.addClientIntake1(req.body).then(function(data) {
+        res.sendStatus(200);
     }).catch(function(error) {
         console.log(error);
-       // res.sendStatus(500);
+        res.sendStatus(500);
     });
-}
+});
 
+/*
 function addToClientIntake2(req) {
     db.addClientIntake2(req).then(function(data) {
         //res.sendStatus(200);
@@ -87,34 +96,47 @@ function addToClientIntake2(req) {
        // res.sendStatus(500);
     });
 }
+*/
 
-function getLastClientIntake1() {
+app.post('/addClientIntake2', (req, res) => {
+    db.addClientIntake2(req.body).then(function(data) {
+        res.sendStatus(200);
+    }).catch(function(error) {
+        console.log(error);
+        res.sendStatus(500);
+    });
+});
+
+
+app.get('/getLastClientIntake1', (req, res) => {
     db.getLastClientIntake1().then(function(data) {
-        //res.send(data);
         console.log(data);
+        res.send(data);
         return data;
     }).catch(function(error) {
         console.log(error);
-        //res.sendStatus(500);
     });
-}
+});
 
-function getLastClientIntake2() {
+app.get('/getLastClientIntake2', (req, res) => {
     db.getLastClientIntake2().then(function(data) {
         //res.send(data);
         console.log(data);
+        res.send(data);
         return data;
     }).catch(function(error) {
         console.log(error);
         //res.sendStatus(500);
     });
-}
+})
 
+const port = process.env.PORT || 8650;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
 //let datap1 = getLastClientIntake1();
 //let datap2 = getLastClientIntake2();
 
-formFiller.fillFormP1(obj3);
-formFiller.fillFormP2(obj4);
+//formFiller.fillFormP1(obj3);
+//formFiller.fillFormP2(obj4);
 
 /* Testing */
 /*
