@@ -1,17 +1,21 @@
 const pdfFillForm = require('pdf-fill-form');
 const fs = require('fs');
 
+/*
 pdfFillForm.read('Forms/English-IntakeDFSS_Form-2018.pdf')
 .then(function(result) {
     console.log(result);
 }, function(err) {
     console.log(err);
 });
-
-/*
-pdfFields = pdfFillForm.readSync('English-IntakeDFSS_Form-2018.pdf');
-console.log(pdfFields);
 */
+
+pdfFields = pdfFillForm.readSync('Forms/English-IntakeDFSS_Form-2018.pdf');
+pdfFields.forEach(element => {
+    console.log("Column: " + element.name + ", Type: " + element.type);
+});
+//console.log(pdfFields);
+
 
 pdfFillForm.write('Forms/English-IntakeDFSS_Form-2018.pdf', 
     { "Agency Name Field": "test" }, 
